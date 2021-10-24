@@ -1,0 +1,40 @@
+/*
+	Neurons
+
+	I dedicate any and all copyright interest in this software to the
+	public domain. I make this dedication for the benefit of the public at
+	large and to the detriment of my heirs and successors. I intend this
+	dedication to be an overt act of relinquishment in perpetuity of all
+	present and future rights to this software under copyright law.
+
+	https://github.com/lachlanmcdonald/cfdg
+*/
+
+startshape INIT
+background {b -0.9}
+
+rule INIT {
+	8*{r 45} ALPHATREE[]
+}
+rule ALPHATREE {
+	LINE[b 1 h 0 |h 50 sat 1 a -0.8]
+	LINE[b 1 h 50 |h 100 sat 1 a -0.8]
+	LINE[b 1 h 100 |h 200 sat 1 a -0.8]
+}
+rule LINE{
+	CONNECTOR[]
+	MARKER[]
+	LINE [x 5 r 10 s 0.9]
+}
+rule LINE 0.2{
+	LINE [h 0.1|]
+	LINE [flip 180 h 0.1|]
+}
+rule CONNECTOR {
+	SQUARE[s 0.5 z 9]
+	CONNECTOR[s 0.9 x 0.5]
+}
+rule MARKER {
+	CIRCLE[s 2.0 b  1]
+	CIRCLE[s 1.5 b -1]
+}

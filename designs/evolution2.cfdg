@@ -1,0 +1,46 @@
+/*
+	Evolution 2
+
+	I dedicate any and all copyright interest in this software to the
+	public domain. I make this dedication for the benefit of the public at
+	large and to the detriment of my heirs and successors. I intend this
+	dedication to be an overt act of relinquishment in perpetuity of all
+	present and future rights to this software under copyright law.
+
+	https://github.com/lachlanmcdonald/cfdg
+*/
+
+startshape INIT
+background {b -1}
+
+rule INIT {
+	PLANET{sat 1 h 0 b 1}
+}
+rule PLANET {
+	CIRCLE[z 50]
+	RADIUS[]
+	NEWPLANET[h 5 z 1]
+}
+rule RADIUS{
+	CIRCLE{s 5 a -0.95 z -10}
+	CIRCLE{s 4 a -0.95 z -10}
+	CIRCLE{s 3 a -0.95 z -10}
+	CIRCLE{s 2 a -0.95 z -10}
+}
+
+rule NEWPLANET {PLANET[x 2.5 s 0.75 r 46]}
+rule NEWPLANET {PLANET[x 2.5 s 0.75 r -46]}
+rule NEWPLANET {PLANET[x 2.5 s 1.00 r 46]}
+rule NEWPLANET {PLANET[x 2.5 s 1.00 r -46]}
+rule NEWPLANET {
+	PLANET[x -2.5 s 0.75 r 46]
+	PLANET[x 2.5 s 0.75 r 46]
+}
+rule NEWPLANET {
+	PLANET[x -2.5 s 0.75 r -46]
+	PLANET[x 2.5 s 0.75 r -46]
+}
+rule NEWPLANET 0.005{
+	PLANET[x -2.5 s 5 r 46]
+	PLANET[x 2.5 s 5 r -46]
+}

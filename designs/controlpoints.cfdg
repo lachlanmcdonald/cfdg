@@ -1,0 +1,44 @@
+/*
+	CONTROL POINTS
+
+	I dedicate any and all copyright interest in this software to the
+	public domain. I make this dedication for the benefit of the public at
+	large and to the detriment of my heirs and successors. I intend this
+	dedication to be an overt act of relinquishment in perpetuity of all
+	present and future rights to this software under copyright law.
+
+	https://github.com/lachlanmcdonald/cfdg
+*/
+
+startshape I
+background {b -1}
+
+rule I {
+	C[]
+	L[h 0 |h 100 sat 1 b 1]
+}
+rule L {
+	SQUARE[y 0 s 1]
+	L[x 1]
+}
+rule L .09 {
+	L[flip 90 s -0.99]
+	L[r 10 s -0.5]
+}
+rule L .19 {
+	L[hue 0.01|]
+}
+rule L .1 {
+	L[r 10]
+}
+rule L .009 {
+	CIRCLE[s 7]
+	15*[r 24] C[s 3 y 7]
+}
+rule C {
+	BC[]
+	C[x 1 s 0.9 r 10]
+}
+rule BC {
+	4*[s 0.75] CIRCLE[a -0.75]
+}

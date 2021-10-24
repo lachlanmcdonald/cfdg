@@ -1,0 +1,36 @@
+/*
+	ISOBLOCKS
+
+	I dedicate any and all copyright interest in this software to the
+	public domain. I make this dedication for the benefit of the public at
+	large and to the detriment of my heirs and successors. I intend this
+	dedication to be an overt act of relinquishment in perpetuity of all
+	present and future rights to this software under copyright law.
+
+	https://github.com/lachlanmcdonald/cfdg
+*/
+
+startshape INIT
+background {b -1}
+
+rule INIT {
+	100*{y 1 x -2 } ROW{sat 0.5}
+}
+rule ROW {
+	100*{x 2 y 1} BUILD{}
+}
+rule TOWER {
+	SQUARE{x 1 s 2 1 skew 0 45 b 0.65}
+	SQUARE{x -1 s 2 1 skew 0 -45 b 0.8}
+}
+rule ROOF {
+	TOWER{}
+	SQUARE{y 1 s 2 1 skew 45 -45 b 0.5}
+}
+rule BUILD{
+	TOWER{}
+	BUILD{y 1 h 2}
+}
+rule BUILD 0.05 {
+	ROOF{}
+}

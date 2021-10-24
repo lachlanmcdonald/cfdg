@@ -1,0 +1,56 @@
+/*
+	Tentacle Tree
+
+	I dedicate any and all copyright interest in this software to the
+	public domain. I make this dedication for the benefit of the public at
+	large and to the detriment of my heirs and successors. I intend this
+	dedication to be an overt act of relinquishment in perpetuity of all
+	present and future rights to this software under copyright law.
+
+	https://github.com/lachlanmcdonald/cfdg
+*/
+
+startshape petree
+background {b -1}
+
+rule petree {
+	virus{}
+}
+rule virus {
+	stem{flip 0 b 1 sat 1 hue 0}
+	stem{flip 90 b 1 sat 1 hue 0}
+}
+rule glow {
+	CIRCLE {}
+	SQUARE {s 0.5 x 1 y -1}
+	SQUARE {s 0.5 x -1 y 1}
+}
+rule stem {
+	glow{}
+	stem{s 0.99 x 0.99 r 1 }
+}
+rule stem {
+	glow{}
+	stem{s 0.99 x 0.99 r 5 }
+}
+rule stem 0.03 {
+	splice{ hue 5 }
+}
+rule splice {
+	point {}
+	stem{flip 45}
+	stem{flip -45}
+}
+rule splice {
+	point {}
+	stem{flip 0}
+	stem{flip -45}
+	stem{flip 45}
+}
+rule point {
+	sqr {s 4 b 1 sat 1 hue 0}
+}
+rule sqr{
+	CIRCLE{}
+	sqr {alpha -0.1 s 0.99  x 0.99 r 90 skew 1 5}
+}

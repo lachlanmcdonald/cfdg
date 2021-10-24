@@ -1,0 +1,32 @@
+/*
+	Cylinder City
+
+	I dedicate any and all copyright interest in this software to the
+	public domain. I make this dedication for the benefit of the public at
+	large and to the detriment of my heirs and successors. I intend this
+	dedication to be an overt act of relinquishment in perpetuity of all
+	present and future rights to this software under copyright law.
+
+	https://github.com/lachlanmcdonald/cfdg
+*/
+
+startshape CITY
+background {b -1}
+
+rule CITY {
+	24 * {y 1 x -2 h 10} BLOCK {}
+}
+rule BLOCK {
+	24 * {y 1 x 2} BASE {b 0.75 sat 0.5}
+}
+rule BASE {
+	SQUARE{s 2 1 skew 45 -45 b .05}
+	LINE{}
+}
+rule LINE {
+	CIRCLE{s 2 1 skew 45 -45 b .15}
+	LINE{y 0.01 b -0.005}
+}
+rule LINE 0.01 {
+	CIRCLE{s 2 1 skew 45 -45 b .75}
+}

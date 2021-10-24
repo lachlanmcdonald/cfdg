@@ -1,0 +1,30 @@
+/*
+	Veins II
+
+	I dedicate any and all copyright interest in this software to the
+	public domain. I make this dedication for the benefit of the public at
+	large and to the detriment of my heirs and successors. I intend this
+	dedication to be an overt act of relinquishment in perpetuity of all
+	present and future rights to this software under copyright law.
+
+	https://github.com/lachlanmcdonald/cfdg
+*/
+
+startshape INIT
+background {b -1}
+
+rule INIT {
+	LINE{r 0 b 1 hue 1 sat 1}
+	LINE{r 0 flip 90 b 1 hue 1 sat 1}
+}
+rule LINE {
+	SQUARE {}
+	CIRCLE {s 0.5 y 1 }
+	CIRCLE {s 0.5 y -1 }
+	LINE{r 1 x 1 s 0.99 hue 1}
+}
+rule LINE 0.02{
+	CIRCLE {s 4}
+	LINE{x 1 s 0.99 r 45}
+	LINE{x 1 s 0.99 r -45}
+}

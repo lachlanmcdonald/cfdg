@@ -1,0 +1,39 @@
+/*
+	Spiders Web
+
+	I dedicate any and all copyright interest in this software to the
+	public domain. I make this dedication for the benefit of the public at
+	large and to the detriment of my heirs and successors. I intend this
+	dedication to be an overt act of relinquishment in perpetuity of all
+	present and future rights to this software under copyright law.
+
+	https://github.com/lachlanmcdonald/cfdg
+*/
+
+startshape I
+background {h 46.6 sat 0.1 b -0.75}
+
+rule I {
+	C[]
+	C[flip 270]
+}
+rule C 100{
+	D[h 80 sat 0.2 b 1.0]
+	C[x 1 h 1]
+}
+rule C 5{
+	C2[]
+}
+rule C2 300{
+	D[h 0 sat 0.2 b 1.0]
+	C2[x 1 r 15]
+}
+rule C2 20{C[s 0.75]C[s 0.75]}
+rule C2 0.2{}
+
+rule D {
+	CIRCLE[z 2]
+	CIRCLE[a -0.5 s 3 sat 0 b -1.0 z 1]
+	CIRCLE[y 2 a -0.5 s 0.5 sat 0 b -1.0 z 1]
+	CIRCLE[y -2 a -0.5 s 0.5 sat 0 b -1.0 z 1]
+}
